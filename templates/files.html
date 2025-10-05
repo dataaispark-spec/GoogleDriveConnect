@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Files</title>
+</head>
+<body>
+    <h1>Your Google Drive Files</h1>
+    <ul>
+        {% for file in files %}
+            <li>{{ file.name }} - {{ file.mimeType }} <a href="{{ url_for('download', file_id=file.id) }}">Download</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('upload') }}">Upload File</a> | <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
